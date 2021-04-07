@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.css';
+body {
+    background-color: #333;
+}
+
+@font-face {
+    font-family: lato;
+    src: url(assets/fonts/fontawesome-webfont.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: digital;
+    src: url(assets/fonts/digital7.ttf) format("truetype");
+}

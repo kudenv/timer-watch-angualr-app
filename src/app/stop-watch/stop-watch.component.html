@@ -1,0 +1,32 @@
+<div class="parent">
+    <div class="stopWatch">
+        <div class="numbers background">88:88.88</div>
+        <div class="numbers">{{(timer.mm) | timeFormat}}:{{(timer.ss) | timeFormat }}:{{(timer.ms) | timeFormat}}</div>
+
+        <div class="buttons">
+            <button class="big" (click)="playPause()">
+                <span class="icon"><i [ngClass] = "isRunning? 'fa-pause': 'fa-play' " class="fa " aria-hidden="true"></i></span>
+            {{isRunning ? 'Pause' : 'Play'}}
+          </button>
+
+            <button class="" (click)="add(timer)">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+          </button>
+
+            <button (click)="deleteAll()">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </div>
+
+    </div>
+
+
+    <div class="items" *ngFor="let i of list;let j=index" (mouseover)="setButton(false,j)" (mouseleave)="setButton(true,j)">
+        <div class="numbers background">88:88.88</div>
+        <div class="numbers">
+            {{(i.mm) | timeFormat }}:{{(i.ss) | timeFormat }}:{{(i.ms) | timeFormat}}
+            <button class="remove hide" [ngClass]="selectedIndex==j && hideElement?'show':'hide'" (click)="remove(i)">Remove</button>
+        </div>
+    </div>
+
+</div>
